@@ -1,9 +1,9 @@
 <?php
     require_once __DIR__.'/Models/System.php';
-    require_once __DIR__.'/Models/Db.php';
     require_once __DIR__.'/Models/Email.php';
     require_once __DIR__.'/Models/Sms.php';
     require_once __DIR__.'/Models/Notification.php';
+    require_once __DIR__.'/Models/db.php';
     
 
 ?>
@@ -20,8 +20,14 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="col-12">
-                </div>
+                <?php foreach($systems as $system):?>
+                    <div class="col-12">
+                        <?php echo $system->getMittente() ?>
+                    </div>
+                    <div class="col-12">
+                        <?php echo $system->suono ?>
+                    </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </body>
