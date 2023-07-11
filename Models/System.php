@@ -1,23 +1,21 @@
 <?php
 
 class System {
-        public $suono; 
+        static public $suono = 'DRIIINNN'; 
         private $mittente;
         private $destinatario;
         private $oggetto;
         private $contenuto;
+        
 
-        public function __construct(String $mittente, String $destinatario, String $oggetto, String $contenuto, String $suono){
+        public function __construct(String $mittente, String $destinatario, String $oggetto, String $contenuto){
             $this->mittente = $mittente;
             $this->destinatario = $destinatario;
             $this->oggetto = $oggetto;
             $this->contenuto = $contenuto;
-            $this->suono = $suono;
+
         }
         
-        // public function getSuono($suono){
-        //     return $this->suono = $suono;
-        // }
 
         public function getMittente(){
             return $this->mittente;
@@ -33,6 +31,10 @@ class System {
 
         public function getContenuto(){
             return $this->contenuto;
+        }
+
+        public function invio(){
+
         }
 
     }

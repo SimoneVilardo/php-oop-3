@@ -3,9 +3,9 @@
     class Notification extends System {
         private $icona;
 
-        public function __construct($_mittente, $_destinatario, $_oggetto, $_contenuto, $_suono, $icona){
+        public function __construct($_mittente, $_destinatario, $_oggetto, $_contenuto, $icona){
 
-            parent::__construct($_mittente, $_destinatario, $_oggetto, $_contenuto, $_suono);
+            parent::__construct($_mittente, $_destinatario, $_oggetto, $_contenuto);
             $this->icona = $icona;
         }     
         
