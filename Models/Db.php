@@ -29,12 +29,22 @@
     ];
 
     $message = new Sms('Simone Vilardo', 'Gianni Fico', 'Invito', 'Sei invitato alla mia festa di compleanno', 'Letto', 'Risposta', true);
+
     $message1 = new Sms('Simone Vilardo', 'Michelle Malizia', 'Serata', 'Usciamo stasera per andare al Quetzal', 'Non Letto', 'Risposta', false);
 
     
     $messages = [
         $message,
         $message1
+    ];
+
+    $notification = new Notification('Antonio Nicolosi', 'Gianni Fico', 'Play Game', 'Sei invitato a giocare con ...', 'Non Visibile', 'Icona');
+
+    $notification1 = new Notification('Salvo Ganci', 'Gianni Colombari', 'Unisciti al Party', 'Sei stato invitato ad unirti al party', 'Visibile', 'Icona');
+
+    $notifications = [
+        $notification,
+        $notification1
     ]
         
 ?>

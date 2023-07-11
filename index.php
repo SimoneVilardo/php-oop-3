@@ -112,5 +112,44 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <h1 class="text-center fw-bold">NOTIFICHE</h1>                  
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <?php foreach($notifications as $notification): ?>
+                            <div class="col-6 card">
+                                <h3>Mittente:
+                                    <?php echo $notification->getMittente() ?>
+                                </h3>
+                                <h3>Destinatario:
+                                    <?php echo $notification->getDestinatario() ?>
+                                </h3>
+                                <h4>Oggetto:
+                                    <?php echo $notification->getOggetto()?>
+                                </h4>
+                                <h4>Contenuto:
+                                    <?php echo $notification->getContenuto()?>
+                                </h4>
+                                <h4> Suono:
+                                    <?php echo System::$suono ?>
+                                </h4>
+                                <h4>Visibile:
+                                    <?php echo $notification->getVisibilita()?>
+                                </h4>
+                                <h4>icona:
+                                    <?php echo $notification->getIcona()?>
+                                </h4>
+                                <h4> Colore:
+                                    <?php echo Notification::$colore_led ?>
+                                </h4>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
