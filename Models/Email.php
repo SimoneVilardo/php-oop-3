@@ -3,7 +3,7 @@
         public $notifica_invio;
 
         private $allegato;
-        static public $colore = 'Yellow';
+        static public $colore_led = 'Yellow';
 
         public function __construct($_mittente, $_destinatario, $_oggetto, $_contenuto, $notifica_invio){
 

@@ -26,45 +26,90 @@
                 <div class="col-12">
                     <h1 class="text-center fw-bold">EMAIL</h1>
                 </div>
-                <?php foreach($systems as $system):?>
-                    <div class="card col-4">
-                        <h4> Suono:
-                            <?php echo System::$suono ?>
-                        </h4>
-                        <h3>Mittente:
-                            <?php echo $system->getMittente() ?>
-                        </h3>
-                        <h3>Destinatario:
-                            <?php echo $system->getDestinatario() ?>
-                        </h3>
-                        <div>
-                            Allegato:
-                            <?php if(!is_null($system->getAllegato())){ ?>
-                                <i class="fa-solid fa-paperclip" style="color: #000000;"></i><span><?php echo $system->getAllegato()->getNome() ?></span>
-                                <span><?php echo $system->getAllegato()->getDimensione() ?></span>
-                            <?php } ?>
-                        </div>
-                        
-                        <h4>
-                            <?php echo $system->getNotificaInvio()?>
-                        </h4>
-                        <h4>Oggetto:
-                            <?php echo $system->getOggetto()?>
-                        </h4>
-                        <h4>Contenuto
-                            <?php echo $system->getContenuto()?>
-                        </h4>
-                        <h4>
-                            <?php echo $system->getInoltro()?>
-                        </h4>
-                        <h4>
-                            <?php echo $system->getStampa()?>
-                        </h4>
-                        <h4>Colore:
-                            <?php echo Email::$colore ?>
-                        </h4>
+                <div class="col-12">
+                    <div class="row">
+                        <?php foreach($systems as $system):?>
+                            <div class="card col-4">
+                                <h3>Mittente:
+                                    <?php echo $system->getMittente() ?>
+                                </h3>
+                                <h3>Destinatario:
+                                    <?php echo $system->getDestinatario() ?>
+                                </h3>
+                                <h4>Oggetto:
+                                    <?php echo $system->getOggetto()?>
+                                </h4>
+                                <h4>Contenuto:
+                                    <?php echo $system->getContenuto()?>
+                                </h4>
+                                <h4> Suono:
+                                    <?php echo System::$suono ?>
+                                </h4>
+                                <div>
+                                    Allegato:
+                                    <?php if(!is_null($system->getAllegato())){ ?>
+                                        <i class="fa-solid fa-paperclip" style="color: #000000;"></i><span><?php echo $system->getAllegato()->getNome() ?></span>
+                                        <span><?php echo $system->getAllegato()->getDimensione() ?></span>
+                                    <?php } ?>
+                                </div>
+                                <h4>
+                                    <?php echo $system->getNotificaInvio()?>
+                                </h4>
+                                <h4>
+                                    <?php echo $system->getInoltro()?>
+                                </h4>
+                                <h4>
+                                    <?php echo $system->getStampa()?>
+                                </h4>
+                                <h4>Colore:
+                                    <?php echo Email::$colore_led ?>
+                                </h4>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
-                <?php endforeach; ?>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                <h1 class="text-center fw-bold">MESSAGI</h1>                  
+                </div>
+                <div class="col-12">
+                    <div class="row">
+                        <?php foreach($messages as $message): ?>
+                            <div class="col-6 card">
+                                <h3>Mittente:
+                                    <?php echo $message->getMittente() ?>
+                                </h3>
+                                <h3>Destinatario:
+                                    <?php echo $message->getDestinatario() ?>
+                                </h3>
+                                <h4>Oggetto:
+                                    <?php echo $message->getOggetto()?>
+                                </h4>
+                                <h4>Contenuto:
+                                    <?php echo $message->getContenuto()?>
+                                </h4>
+                                <h4> Suono:
+                                    <?php echo System::$suono ?>
+                                </h4>
+                                <h4>Notifica Lettura:
+                                    <?php echo $message->getLettura()?>
+                                </h4>
+                                <h4>Risposta:
+                                    <?php echo $message->getRisposta()?>
+                                </h4>
+                                <h4> Colore:
+                                    <?php echo Sms::$colore_led ?>
+                                </h4>
+                                <h4>Risposta:
+                                    <?php echo $message->getNotificaMessaggio()?>
+                                </h4>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
             </div>
         </div>
     </body>

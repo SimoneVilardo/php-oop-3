@@ -1,9 +1,5 @@
 <?php
 
-    // $email = new Email('simone@gmail.com', 'loris@gmail.com', 'Incontro per cena', 'Ciao Loris, stiamo organizzando una cena', null, null, null, null, null);
-    // $email->addAllegato('C:/Documents/foto.png');
-    // $email->addAllegato('C:/Documents/ricevuta.png');
-    // $email->addAllegato('C:/Documents/video-del-matrimonio.mp4');
     $email = new Email('Simone Vilardo', 'Marco Troisi', 'Riforme','Ciao .....', true);
     $allegato= new Allegato('pdf', '52mb');
     $email->setAllegato($allegato);
@@ -31,6 +27,14 @@
         $email5,
         $email6
     ];
+
+    $message = new Sms('Simone Vilardo', 'Gianni Fico', 'Invito', 'Sei invitato alla mia festa di compleanno', 'Letto', 'Risposta', true);
+    $message1 = new Sms('Simone Vilardo', 'Michelle Malizia', 'Serata', 'Usciamo stasera per andare al Quetzal', 'Non Letto', 'Risposta', false);
+
     
+    $messages = [
+        $message,
+        $message1
+    ]
         
 ?>
