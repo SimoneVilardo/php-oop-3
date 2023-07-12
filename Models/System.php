@@ -6,7 +6,7 @@ class System {
         private $destinatario;
         private $oggetto;
         private $contenuto;
-        
+
 
         public function __construct(String $mittente, String $destinatario, String $oggetto, String $contenuto){
             $this->mittente = $mittente;
@@ -34,7 +34,7 @@ class System {
         }
 
         public function invio(){
-
+            return 'Comunicazione inviata';
         }
 
     }

@@ -3,7 +3,7 @@
         private $nome;
         private $dimensione;
 
-        public function __construct($nome, $dimensione){
+        public function __construct(String $nome, String $dimensione){
             $this->nome = $nome;
             $this->dimensione = $dimensione;
         }

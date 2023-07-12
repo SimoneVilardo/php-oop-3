@@ -53,7 +53,7 @@
                                     <?php } ?>
                                 </div>
                                 <h4>
-                                    <?php echo $system->getNotificaInvio()?>
+                                    <?php echo $system->getNotificaInvio() ? 'Email Consegnata' : 'Email Non Consegnata'?>
                                 </h4>
                                 <h4>
                                     <?php echo $system->getInoltro()?>
@@ -63,6 +63,9 @@
                                 </h4>
                                 <h4>Colore:
                                     <?php echo Email::$colore_led ?>
+                                </h4>
+                                <h4>
+                                    <?php echo $system->invio() ?>
                                 </h4>
                             </div>
                         <?php endforeach; ?>
@@ -98,13 +101,16 @@
                                     <?php echo $message->getLettura()?>
                                 </h4>
                                 <h4>Risposta:
-                                    <?php echo $message->getRisposta()?>
+                                    <?php echo $message->risposta()?>
                                 </h4>
                                 <h4> Colore:
                                     <?php echo Sms::$colore_led ?>
                                 </h4>
                                 <h4>Risposta:
-                                    <?php echo $message->getNotificaMessaggio()?>
+                                    <?php echo $message->getNotificaMessaggio() ? '<i class="fa-solid fa-check-double" style="color: #2495ff;"></i>' : '<i class="fa-solid fa-check-double" style="color: #000;"></i>'?>
+                                </h4>
+                                <h4>
+                                    <?php echo $message->invio() ?>
                                 </h4>
                             </div>
                         <?php endforeach; ?>
@@ -137,13 +143,19 @@
                                     <?php echo System::$suono ?>
                                 </h4>
                                 <h4>Visibile:
-                                    <?php echo $notification->getVisibilita()?>
+                                    <?php echo $notification->getVisibilita() ? 'Visibile' : 'Non Visibile'?>
                                 </h4>
                                 <h4>icona:
                                     <?php echo $notification->getIcona()?>
                                 </h4>
                                 <h4> Colore:
                                     <?php echo Notification::$colore_led ?>
+                                </h4>
+                                <h4>
+                                    <?php echo $notification->invio() ?>
+                                </h4>
+                                <h4>
+                                    <?php echo $notification->onClick() ?>
                                 </h4>
                             </div>
                         <?php endforeach; ?>

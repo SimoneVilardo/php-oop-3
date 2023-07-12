@@ -1,6 +1,6 @@
 <?php
     class Email extends System {
-        public $notifica_invio;
+        private $notifica_invio;
 
         private $allegato;
         static public $colore_led = 'Yellow';
@@ -15,12 +15,7 @@
         
 
         public function getNotificaInvio(){
-            if($this->notifica_invio === true){
-                return 'Email Consegnata';
-            }
-            else {
-                return 'Email Non Consegnata';
-            }
+            return $this->notifica_invio;   
         }
         
         public function getInoltro(){
@@ -37,5 +32,10 @@
 
         public function setAllegato($allegato){
             return $this->allegato = $allegato;
+        }
+
+
+        public function invio(){
+            return 'Email inviata';
         }
     }

@@ -19,5 +19,13 @@
         public function getVisibilita(){
             return $this->visibile;
         }
+
+        public function invio(){
+            return 'Notifica inviata';
+        }
+
+        public function onClick(){
+            return 'Apro l\'applicazione collegata al bottone';
+        }
     }
 ?>
